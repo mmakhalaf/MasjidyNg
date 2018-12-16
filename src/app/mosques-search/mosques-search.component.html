@@ -1,0 +1,25 @@
+
+<div class="main-page">
+   <mosque-searchbox>
+   </mosque-searchbox>
+
+   <div *ngIf="mosques.length == 0">
+      Search for mosques...
+   </div>
+   <div *ngIf="mosques.length > 0">
+      <mat-card *ngFor="let mosque of mosques">
+         <mat-card-header>
+            <mat-card-title>
+               <strong>{{mosque.name}}</strong>
+            </mat-card-title>
+         </mat-card-header>
+         <mat-card-content>
+            <p>{{mosque.address_line(0)}}</p>
+            <p><strong>{{get_next_prayer_name_string(mosque)}}: </strong>{{get_next_prayer_time_string(mosque)}}</p>
+         </mat-card-content>
+         <mat-card-actions>
+            <button mat-button (click)="on_clicked_details(mosque)">Prayer Times</button>
+         </mat-card-actions>
+      </mat-card>
+   </div>
+</div>

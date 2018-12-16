@@ -1,0 +1,10 @@
+<div class="search-container">
+   <mat-form-field hintLabel="Address, Location, Postcode">
+      <input matInput placeholder="Location" value="">
+   </mat-form-field>
+   <mat-form-field hintLabel="Radius">
+      <mat-select placeholder="Radius">
+         <mat-option *ngFor="let r of radii" value="r">{{r}} {{unit}}</mat-option>
+      </mat-select>
+   </mat-form-field>
+</div>
